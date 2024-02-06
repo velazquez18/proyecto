@@ -1,0 +1,30 @@
+<h3>Listado de Tareas</h3>
+
+<div *ngIf="!tareas.length">No hay tareas registradas</div>
+
+<table *ngIf="tareas.length" class="table">
+    <thead>
+        <tr>
+            <th>Id Tarea</th>
+            <th>Nombre de la tarea</th>
+            <th>Descripcion</th>
+            <th>Fecha de vencimiento</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tarea of tareas"> 
+            <td>{{ tarea.id}}</td>
+            <td>{{ tarea.nombre }}</td>
+            <td>{{ tarea.descripcion }}</td>
+            <td>{{ tarea.fecha }}</td>
+            <td>{{ tarea.estado }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><strong>Tipos de estado de la tarea</strong></p>
+1:Pendiente <br>
+2:En progreso <br>
+3:Completado <br>
+0:Sin definir <br>

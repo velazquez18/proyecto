@@ -1,0 +1,30 @@
+<h3>Alta de la Tarea</h3>
+
+
+<div class="col-sm-4">
+    <p>
+        <label>Nombre de la Tarea</label>
+        <input type="text" class="form-control" [(ngModel)]="tarea.nombre">
+    </p>
+    <p>
+        <label>Descripcion</label>
+        <input type="text" class="form-control" [(ngModel)]="tarea.descripcion">
+    </p>
+    <p>
+        <label>Fecha de vencimiento</label>
+        <input type="text" class="form-control" [(ngModel)]="tarea.fecha">
+    </p>
+    <p>
+        <label>Selecciona el tipo de esado de la tarea:</label>
+        <select [(ngModel)]="tarea.estado" class="form-control">
+            <option *ngFor="let tipo of tipos" value="{{ tipo.id }}">
+                {{ tipo.desc }}
+            </option>
+        </select>
+    </p>
+    <p>
+        <button type="button" class="btn btn-primary" (click)="insertarTarea()">
+            Insertar
+        </button>
+    </p>
+</div>
